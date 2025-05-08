@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dragostea începe cu noi</title>
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(#ffe6f0, #ffb3c6);
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #c0392b;
+      margin-bottom: 40px;
+    }
+    .heart {
+      position: absolute;
+      font-size: 1.2rem;
+      color: #ff5e78;
+      animation: float 8s infinite;
+      opacity: 0.8;
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(1); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+    }
+    a {
+      background: #c0392b;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dragostea începe cu noi.</h1>
+  <a href="mesaj1.html">❤️ Citește primul mesaj ❤️</a>
+
+  <script>
+    const mesaje = ["Iubirea mea", "Inima mea", "Puiul meu", "Zâna mea"];
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = mesaje[Math.floor(Math.random() * mesaje.length)];
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDelay = (Math.random() * 5) + "s";
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
